@@ -1,0 +1,7 @@
+export PS1="\u@\h:\w\\$ "
+export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
