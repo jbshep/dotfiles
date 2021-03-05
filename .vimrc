@@ -5,3 +5,4 @@ set cursorline
 set visualbell
 syn on
 colorscheme industry
+autocmd FileType make setlocal noexpandtab
