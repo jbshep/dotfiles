@@ -1,6 +1,6 @@
 SHELL=/bin/bash
 
-DOTFILES = .vimrc .inputrc
+DOTFILES = .vimrc .vimrc.html .inputrc
 
 link: $(DOTFILES)
 	for i in $?; do \
