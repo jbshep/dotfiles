@@ -1,8 +1,20 @@
-export PS1="\u@\h:\w\\$ "
-export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
 export BASH_SILENCE_DEPRECATION_WARNING=1
-export ANDROID_HOME=/usr/local/opt/android-sdk
+
+export PS1="\u@\h:\w\\$ "
+
+#export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=~/bin:${PATH}
+export PATH=/usr/local/opt/sphinx-doc/bin:${PATH}
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+
+#export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openjdk@11/include"
+
+# Antlr
 export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
+eval "$(pyenv init -)"
