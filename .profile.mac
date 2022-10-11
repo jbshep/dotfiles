@@ -6,6 +6,7 @@ export PS1="\u@\h:\w\\$ "
 export PATH=~/bin:${PATH}
 export PATH=/usr/local/opt/sphinx-doc/bin:${PATH}
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export PATH=/usr/local/smlnj/bin:"$PATH"
 
 #export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 
