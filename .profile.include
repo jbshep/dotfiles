@@ -2,20 +2,32 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export PS1="\u@\h:\w\\$ "
 
-#export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH=~/bin:${PATH}
-export PATH=/usr/local/opt/sphinx-doc/bin:${PATH}
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export PATH=/usr/local/smlnj/bin:"$PATH"
+if [[ $(uname) == "Darwin" ]]; then
+    # ----- macOS stuff -----
+    # Things I often do on my Mac include LaTeX, Sphinx, programming languages,
+    # and Python of various versions.
 
-#export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+    #export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+    export PATH=~/bin:${PATH}
+    export PATH=/usr/local/opt/sphinx-doc/bin:${PATH}
+    export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+    export PATH=/usr/local/smlnj/bin:"$PATH"
 
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openjdk@11/include"
+    #export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 
-# Antlr
-export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
-alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'
-alias grun='java org.antlr.v4.gui.TestRig'
+    export LDFLAGS="-L/usr/local/opt/zlib/lib"
+    export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openjdk@11/include"
+    # Antlr
+    export CLASSPATH=".:/usr/local/lib/antlr-4.8-complete.jar:$CLASSPATH"
+    alias antlr4='java -jar /usr/local/lib/antlr-4.8-complete.jar'
+    alias grun='java org.antlr.v4.gui.TestRig'
 
-eval "$(pyenv init -)"
+    eval "$(pyenv init -)"
+fi
+
+alias cd..="cd .."
+
+ve() {
+    python3 -m venv env && source env/bin/activate && pip install Flask
+}
+
