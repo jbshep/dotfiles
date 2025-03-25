@@ -46,4 +46,5 @@ fi
 
 alias l="ls -alF"
 alias cd..="cd .."
+mesg n
 
