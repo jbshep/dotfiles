@@ -16,6 +16,7 @@ function up() {
 function ve() {
     python3 -m venv env
     . env/bin/activate
+    pip install --upgrade pip
     if [ $# -ne 0 ]; then
         pip install $@
     fi
