@@ -11,6 +11,16 @@ function up() {
     done
 }
 
+# Let me type 've flask requests' to create a virtual environment
+# with flask and requests installed.
+function ve() {
+    python3 -m venv env
+    . env/bin/activate
+    if [ $# -ne 0 ]; then
+        pip install $@
+    fi
+}
+
 if [[ $(uname) == "Darwin" ]]; then
     # ----- macOS stuff -----
     # Things I often do on my Mac include LaTeX, Sphinx, programming languages,
@@ -34,9 +44,6 @@ if [[ $(uname) == "Darwin" ]]; then
     eval "$(pyenv init -)"
 fi
 
+alias l="ls -alF"
 alias cd..="cd .."
-
-ve() {
-    python3 -m venv env && source env/bin/activate && pip install Flask
-}
 
