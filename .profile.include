@@ -11,14 +11,18 @@ function up() {
     done
 }
 
-# Let me type 've flask requests' to create a virtual environment
-# with flask and requests installed.
+# 've' - creates basic Python virtualenv
+# 've flask requests' - creates Python virtualenv with flask and requests installed.
+# 've wad' - creates Python virtualenv with libraries for Web App Dev class
 function ve() {
     python3 -m venv env
     . env/bin/activate
-    pip install --upgrade pip
-    if [ $# -ne 0 ]; then
-        pip install $@
+    if [[ $# -ne 0 ]]; then
+        if [[ "$1" == "wad" ]]; then
+            pip install Flask Flask-Session SQLAlchemy Flask-SQLAlchemy requests
+        else
+            pip install $@
+        fi
     fi
 }
 
