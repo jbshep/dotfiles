@@ -2,6 +2,10 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 
 export PS1="\u@\h:\w\\$ "
 
+green() { echo -e "\033[32m$1\033[0m"; }
+red()   { echo -e "\033[31m$1\033[0m"; }
+yellow(){ echo -e "\033[33m$1\033[0m"; }
+
 # Let me type 'up 3' instead of 'cd ../../..'
 function up() {
     num=$1
@@ -23,6 +27,11 @@ function ve() {
         else
             pip install $@
         fi
+        echo ""
+        green "🚀 Libs loaded and virtualenv activated! Let's go! 🚀"
+    else
+        echo ""
+        green "🚀 Virtualenv activated! Let's go! 🚀"
     fi
 }
 
@@ -51,5 +60,4 @@ fi
 
 alias l="ls -alF"
 alias cd..="cd .."
-mesg n
 
