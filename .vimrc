@@ -15,7 +15,8 @@ nnoremap <leader>x i❌<Esc>
 nnoremap <leader>r i🚀<Esc>
 nnoremap <leader>f i🔥<Esc>
 nnoremap <leader>b i🐛<Esc>
-command! EmojiHelp echo "Emoji Panel: \\c=✅ \\x=❌ \\r=🚀 \\f=🔥 \\b=🐛"
+nnoremap <leader>t i🏎️<Esc>
+command! EmojiHelp echo "Emoji Panel: \\c=✅ \\x=❌ \\r=🚀 \\f=🔥 \\b=🐛 \\t=🏎️"
 
 "macros to aid conversion of .md to .rst files
 let @n='/\~\\ref11cl :numref:`%s </}cl>`'
