@@ -15,6 +15,17 @@ function up() {
     done
 }
 
+function x() {
+    if [[ "$1" == "" ]]; then
+        echo "Usage: x <script_file>"
+        echo ""
+        echo "  which makes <script_file> user executable and"
+        echo "  then runs the script"
+    else
+        chmod 700 $1 && ./$1
+    fi
+}
+
 # 've' - creates basic Python virtualenv
 # 've flask requests' - creates Python virtualenv with flask and requests installed.
 # 've wad' - creates Python virtualenv with libraries for Web App Dev class
@@ -60,4 +71,4 @@ fi
 
 alias l="ls -alF"
 alias cd..="cd .."
-
+alias sl=ls
