@@ -53,6 +53,11 @@ if [[ $(uname) == "Darwin" ]]; then
     # and Python of various versions.
 
     #export PATH=~/bin:$PATH:/usr/local/smlnj/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+    # \h is unreliable for bash prompts in macOS Tahoe for some reason.
+    realhost=$(scutil --get ComputerName)
+    export PS1="\u@${realhost}:\w\\$ "
+
     export PATH=~/bin:${PATH}
     export PATH=/usr/local/opt/sphinx-doc/bin:${PATH}
     export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
