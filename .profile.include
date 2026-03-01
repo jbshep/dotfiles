@@ -1,4 +1,5 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
+export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 
 export PS1="\u@\h:\w\\$ "
 
@@ -63,10 +64,20 @@ if [[ $(uname) == "Darwin" ]]; then
     export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
     export PATH=/usr/local/smlnj/bin:"$PATH"
 
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export PATH="$PATH:$ANDROID_HOME/platform-tools"
+    export PATH="$PATH:$ANDROID_HOME/emulator"
+    export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
+    export PATH="$PATH:$ANDROID_HOME/Library/Android/sdk/tools"
+    export PATH="$PATH:$ANDROID_HOME/Library/Android/sdk/tools/bin"
+
     #export CPPFLAGS="-I/usr/local/opt/openjdk@21/include"
 
     export LDFLAGS="-L/usr/local/opt/zlib/lib"
-    export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openjdk@21/include"
+    #export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openjdk@21/include"
+    export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+    export PATH=$JAVA_HOME/bin:$PATH
+
 
     eval "$(pyenv init -)"
 fi
