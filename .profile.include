@@ -85,3 +85,5 @@ fi
 alias l="ls -alF"
 alias cd..="cd .."
 alias sl=ls
+alias v='vim $_'
+alias p='python3 $_'
